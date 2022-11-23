@@ -1,15 +1,17 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const productSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true, unique: true,  },
+    name: { type: String, required: true, unique: true },
     slug: { type: String, required: true, unique: true },
     image: { type: String, required: true },
-    colors: [{
-      type: String,
-      required: true,
-    }],
-    images: [{ url: String, filename: String }],
+    colors: [
+      {
+        type: String,
+        required: true,
+      },
+    ],
+    images: [{ type: String, require: true }],
     brand: { type: String, required: true },
     category: { type: String, required: true },
     description: { type: String, required: true },
@@ -20,7 +22,7 @@ const productSchema = new mongoose.Schema(
       type: Boolean,
       required: true,
     },
-    summerOutFit: { type: Boolean, required: true},
+    summerOutFit: { type: Boolean, required: true },
     numReviews: { type: Number, required: true },
   },
   {
@@ -28,5 +30,5 @@ const productSchema = new mongoose.Schema(
   }
 );
 
-const Product = mongoose.model("Product", productSchema);
+const Product = mongoose.model('Product', productSchema);
 export default Product;
